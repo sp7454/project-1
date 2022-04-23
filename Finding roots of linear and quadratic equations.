@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+  float a,b,c;
+  float d,root,root1,root2;  
+  int choose;
+  printf("1.Root of Linear Equation\n2.Roots of Quadratic Equation\n");
+  printf("Enter your Choice: ");
+  scanf("%d",&choose);
+  switch(choose)
+  {
+  case 1:
+  printf("Format of Linear Equation is ax+b=0.\n\n");
+  printf("Enter the Valua of a and b for Linear Equation: "); 
+  scanf("%f %f",&a,&b);
+  root=(-b)/a;
+  printf("Root is: %.3f",root);
+  break;
+  
+  case 2:
+  printf("Format of Quadratic Equation is ax^2+bx+c=0.\n\n");
+  printf("Enter a, b and c of Quadratic Equation: ");
+  scanf("%f%f%f",&a,&b,&c);
+  d = b * b - 4 * a * c;
+  if(d < 0)
+  {
+    printf("Roots are Complex Number.\n");
+    printf("Roots of Quadratic Equation are: ");
+    printf("%.3f%+.3fi",-b/(2*a),sqrt(-d)/(2*a));
+    printf(", %.3f%+.3fi",-b/(2*a),-sqrt(-d)/(2*a));
+  }
+  else if(d==0)
+  {
+   printf("Both Roots are Equal.\n");
+   root1 = -b /(2* a);
+   printf("Root of Quadratic Equation is: %.3f ",root1);
+  }
+  else
+  {
+   printf("Roots are Real Numbers.\n");
+   root1 = ( -b + sqrt(d)) / (2* a);
+   root2 = ( -b - sqrt(d)) / (2* a);
+   printf("Roots of Quadratic Equation are: %.3f , %.3f",root1,root2);
+  }
+  break;
+  
+  default:
+  printf("Error! choice is not correct");
+  }
+  return 0;
+}
