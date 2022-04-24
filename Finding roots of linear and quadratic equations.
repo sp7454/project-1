@@ -13,9 +13,9 @@ int main()
   {
   case 1:
   printf("Format of Linear Equation is ax+b=0.\n\n");
-  printf("Enter the Valua of a and b for Linear Equation: "); 
+  printf("Enter the Valua of a and b for Linear Equation: "); // a and b are the constant in the equation ax+b=0
   scanf("%f %f",&a,&b);
-  root=(-b)/a;
+  root=(-b)/a;                                  // for linear equation there will be only one root
   printf("Root is: %.3f",root);
   break;
   
@@ -23,21 +23,21 @@ int main()
   printf("Format of Quadratic Equation is ax^2+bx+c=0.\n\n");
   printf("Enter a, b and c of Quadratic Equation: ");
   scanf("%f%f%f",&a,&b,&c);
-  d = b * b - 4 * a * c;
-  if(d < 0)
+  d = b * b - 4 * a * c;                        // d is determinant for quadratic equation
+  if(d < 0)                                     // roots will be imaginery
   {
     printf("Roots are Complex Number.\n");
     printf("Roots of Quadratic Equation are: ");
     printf("%.3f%+.3fi",-b/(2*a),sqrt(-d)/(2*a));
     printf(", %.3f%+.3fi",-b/(2*a),-sqrt(-d)/(2*a));
   }
-  else if(d==0)
+  else if(d==0)                                 // both roots will be equal
   {
    printf("Both Roots are Equal.\n");
    root1 = -b /(2* a);
    printf("Root of Quadratic Equation is: %.3f ",root1);
   }
-  else
+  else                                         // roots will be real and different
   {
    printf("Roots are Real Numbers.\n");
    root1 = ( -b + sqrt(d)) / (2* a);
